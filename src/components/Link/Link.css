@@ -1,0 +1,11 @@
+.link{
+    padding:5px 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+    color: white    ;
+}
+.link:hover{
+    border-bottom: 1px solid white;
+}
