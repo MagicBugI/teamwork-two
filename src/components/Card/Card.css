@@ -1,0 +1,18 @@
+.card{
+    max-width: 250px;
+    max-height: 400px;
+    background: rgb(214, 232, 238);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-img{
+    width: 100%;
+}
+.card-content{
+    padding: 20px 0px;
+}
+@media (max-width: 960px) { 
+    .card{
+        margin-bottom: 25px;
+    }
+ }
