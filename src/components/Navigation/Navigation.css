@@ -7,4 +7,22 @@
     background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}    
+} 
+.navigation ul {
+    width: 30%;
+    display: flex;
+}
+.nav-link{
+    color: white;
+    border: 1px solid transparent;
+    padding: 8px 15px;
+    flex-grow:1;
+    text-align: center;
+    transition: all 0.3s ease ;
+}   
+.nav-link:hover{
+    border-bottom: 1px solid white;
+}
+.active{
+    background: rgb(255, 255, 255 , 0.2);
+}

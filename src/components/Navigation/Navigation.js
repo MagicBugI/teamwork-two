@@ -1,15 +1,17 @@
 import React from "react";
 import './Navigation.css';
-import Link from '../Link/Link';
 import BrandLogo from "../Brand-Logo/Brand-Logo";
+import {NavLink , Link} from 'react-router-dom'
 
 const Navigation = ()=>{
     return(<nav className='navigation'>
-        <BrandLogo/>
+        <Link to='/'>
+            <BrandLogo></BrandLogo>
+        </Link>
         <ul>
-            <Link name='Home' root='/'></Link>
-            <Link name='Catalog' root='/catalog'></Link>
-            <Link name='Card' root='/card'></Link>
+            <NavLink exact className='nav-link' activeClassName='active' to='/'>Home</NavLink>
+            <NavLink exact className='nav-link' activeClassName='active' to='/catalog'>Catalog</NavLink>
+            <NavLink exact className='nav-link' activeClassName='active' to='/cart'>Cart</NavLink>
         </ul>
     </nav>)
 }

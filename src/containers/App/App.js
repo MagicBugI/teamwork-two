@@ -1,30 +1,27 @@
 import './App.css';
+import Navigation from '../../components/Navigation/Navigation';
 import Home from '../Home/Home';
+import Catalog from '../Catalog/Catalog';
+import Cart from '../Cart/Cart';
+import { BrowserRouter as RouteWrapper, Route, Routes } from 'react-router-dom'
 import React, { useState } from 'react';
+import Review from '../Review/Review';
+import { bicycles } from '../../data/bicycles';
+import Footer from '../../components/Footer/Footer';
 
-function App() {
-  const [bikes, setBikes] = useState([
-    {
-      url: 'https://en.author.eu/data/u_rotoskop/2021/magnum_29/magnum_29_10.jpg',
-      name: 'AUTHOR MAGNUM 29 2021-22',
-      title:'AUTHOR Flyer Carbon 29 TR wheel set 28 holes 15 × 110 mm thru front axle 12 × 148 mm thru rear axle',
-      id:1
-    },
-    {
-      url:'https://en.author.eu/data/u_rotoskop/2021/sector_29/sector_29_10.jpg',
-      name:'AUTHOR SECTOR 29 2021-22',
-      title:'AUTHOR Flyer Carbon 29 TR wheel set 28 holes 15 × 110 mm thru front axle 12 × 148 mm thru rear axle',
-      id:2
-    },
-    {
-      url:'https://en.author.eu/data/u_rotoskop/2021/egoist_29/egoist_29_10.jpg',
-      name:'AUTHOR EGOIST 29 2021-22',
-      title:'AUTHOR Flyer Carbon 29 TR wheel set 28 holes 15 × 110 mm thru front axle 12 × 148 mm thru rear axle',
-      id:3
-    }
-  ])
+function App({history}) {
+  const [bikes, setBikes] = useState(bicycles)
   return (
-    <Home bikes={bikes}></Home>
+    <RouteWrapper>
+      <Navigation></Navigation>
+      <Routes>
+        <Route path='/' element={<Home bikes={bikes}/>} />
+        <Route path='/catalog' element={<Catalog bikes={bikes} />}></Route>
+        <Route path='/cart' element={<Cart />}/>
+        <Route path='/catalog/:id' element={ <Review/>} />
+      </Routes>
+      <Footer></Footer>
+    </RouteWrapper>
   );
 }
 
