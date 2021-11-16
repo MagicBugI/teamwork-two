@@ -25,4 +25,3 @@ export const bicycles = [
 export const getBikeById = (id)=>{
     return bicycles.find(bike => bike.id === id);
 }
-

@@ -9,8 +9,8 @@ import Review from '../Review/Review';
 import { bicycles } from '../../data/bicycles';
 import Footer from '../../components/Footer/Footer';
 
-function App({history}) {
-  const [bikes, setBikes] = useState(bicycles)
+function App() {
+  const [bikes, setBikes] = useState(bicycles);
   return (
     <RouteWrapper>
       <Navigation></Navigation>
@@ -18,7 +18,7 @@ function App({history}) {
         <Route path='/' element={<Home bikes={bikes}/>} />
         <Route path='/catalog' element={<Catalog bikes={bikes} />}></Route>
         <Route path='/cart' element={<Cart />}/>
-        <Route path='/catalog/:id' element={ <Review/>} />
+        <Route path='/catalog/:id' element={<Review />} />
       </Routes>
       <Footer></Footer>
     </RouteWrapper>

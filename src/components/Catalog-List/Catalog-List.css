@@ -1,0 +1,11 @@
+.catalog-list{
+    margin: 25px 0px;
+}
+.catalog-list__container{
+    display: flex;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    justify-content:space-between;
+    padding: 25px 0px;
+}

@@ -1,0 +1,42 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0px;
+}
+.review-block{
+    display: flex;
+    align-items: center;
+}
+.review-block img{
+    width: 50%;
+}
+.info-text{
+    padding: 10px 25px;
+}
+.info-text h2{
+    font-size: 40px;
+}
+.info-text p {
+    font-size: 25px;
+}
+.info-text input[type='number']{
+    padding: 8px 12px;
+    width: 100px;
+    margin: 10px 15px;
+    cursor: pointer;
+}
+.action-block{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.action-btn{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+.action-block .price{
+    font-size: 40px;
+    font-style: italic;
+}
