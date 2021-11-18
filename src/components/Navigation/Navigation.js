@@ -4,10 +4,10 @@ import BrandLogo from "../Brand-Logo/Brand-Logo";
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
 
-const Navigation = () => {
+const Navigation = ({inputHandler , searchData}) => {
     const data = useLocation();
 
-    const searchBlock = data.pathname === '/catalog' ? <input className='nav-search' placeholder='Search ...'></input> : null
+    const searchBlock = data.pathname === '/catalog' ? <input value={searchData} onChange={(e)=>inputHandler(e)} className='nav-search' placeholder='Search ...'></input> : null
     return (
         <nav className='navigation'>
             <div className='navigation-container'>
@@ -16,9 +16,9 @@ const Navigation = () => {
                 </Link>
                 {searchBlock}
                 <ul>
-                    <NavLink exact className='nav-link' activeClassName='active' to='/'>Home</NavLink>
-                    <NavLink exact className='nav-link' activeClassName='active' to='/catalog'>Catalog</NavLink>
-                    <NavLink exact className='nav-link' activeClassName='active' to='/cart'>Cart</NavLink>
+                    <NavLink  className='nav-link' activeClassName='active' to='/'>Home</NavLink>
+                    <NavLink  className='nav-link' activeClassName='active' to='/catalog'>Catalog</NavLink>
+                    <NavLink  className='nav-link' activeClassName='active' to='/cart'>Cart</NavLink>
                 </ul>
             </div>
         </nav>
