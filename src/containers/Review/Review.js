@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './Review.css';
 import { useParams } from "react-router-dom";
-import { getBikeById } from "../../data/bicycles";
 import Select from '../../components/Select/Select';
 import CustomBtn from "../../components/Custom-Btn/Custom-Btn";
+import axios from 'axios';
+import Spinner from "../../components/Spinner/Spinner";
 
-const Review = ()=>{
-    let {id} = useParams();
-    const bike = getBikeById(Number(id.slice(1)));
-    return(
+const Review = () => {
+    const [bike, setBike] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    let { id } = useParams();
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            axios.get(`http://localhost:3000/${id}`)
+                .then(res => setBike(res.data))
+            setLoading(false)
+        }, 500);
+    }, []);
+
+    if(loading) return(<Spinner></Spinner>) 
+    
+    return (
         <section className='review'>
             <div className='container'>
                 <div className='review-block'>
@@ -17,7 +32,7 @@ const Review = ()=>{
                         <h2>{bike.name}</h2>
                         <p>{bike.title}</p>
                         <input type='number' min='1' max='10' defaultValue='1'></input>
-                        <Select list={['Black' , 'White' , 'Brown']}></Select>
+                        <Select list={['Black', 'White', 'Brown']}></Select>
                     </div>
                 </div>
                 <div className='action-block'>
@@ -34,4 +49,4 @@ const Review = ()=>{
     );
 }
 
-export default Review;  
+export default Review;

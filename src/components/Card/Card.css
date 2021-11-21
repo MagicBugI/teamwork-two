@@ -1,16 +1,13 @@
 .card{
-    flex-grow: 1;
-    flex-basis: 21%;
     background: rgb(214, 232, 238);
     text-align: center;
     box-shadow: rgba(122, 122, 122, 0.35) 0px 5px 15px;
     margin: 15px 30px;
     transition: all 0.3s ease-in;
-    max-width: 350px;
 }
 .card-img{
     width: 100%;
-    height: 200px;
+    height: 150px;
 }
 .card-content{
     padding: 20px 0px;
